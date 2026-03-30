@@ -33,7 +33,7 @@ jobs:
             --user root \
             ghcr.io/trivoallan/regis-cli:latest \
             analyze "${{ github.event.inputs.image }}" \
-            --archive static/archive \
+            --archive archive \
             --meta "trigger.user= ${{ github.actor }}" \
             --meta "trigger.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             ${{ github.event.inputs.playbook && format('--playbook {0}', github.event.inputs.playbook) || '' }}
@@ -45,7 +45,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Use a custom token if available to allow triggering further workflows (e.g. PR Preview)
+          token: ${{ secrets.REGIS_BOT_TOKEN || secrets.GITHUB_TOKEN }}
           commit-message: "chore: archive report for ${{ github.event.inputs.image }}"
           committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
@@ -57,6 +58,6 @@ jobs:
 
             Triggered by: @${{ github.actor }}
             Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          add-paths: "**/report.json"
-          base: gh-pages
-          keep-files: true
+          add-paths: |
+            archive/**
+          base: main
