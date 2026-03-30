@@ -24,18 +24,22 @@ jobs:
           qr-code: false
           comment: false
 
-      - name: Get report file path
-        id: report-path
-        uses: damoun/action-find-files@v2
+      - name: Find files matching "*.rs" or "*.md"
+        uses: jeertmans/filesfinder@latest
+        id: ff # Any id, to be used later to reference to files output
         with:
-          pattern: 'report.json'
-          path: '.'
+          # Only argument, a single string, to be passed as arguments to ff.
+          # See `ff --help` for more help.
+          # Default: "*"
+          args: report.json
+      - name: Print files
+        run: echo "${{ steps.ff.outputs.files }}"
 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ steps.report-path.outputs.files[0] }}
+          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ steps.ff.outputs.files[0] }}
 
   cleanup:
     if: github.event.action == 'closed'
