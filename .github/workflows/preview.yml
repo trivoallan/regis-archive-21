@@ -28,7 +28,7 @@ jobs:
         id: pl
         uses: Rishabh510/Path-lister-action@master
         with:
-          path: .
+          path: ${{ steps.pr-preview.outputs.preview-url-path }}
           type: .json
 
       - name: Output results
@@ -43,7 +43,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ steps.pl.outputs.paths[0] }}
+          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ fromJson(steps.pl.outputs.paths)[0] }}
 
   cleanup:
     if: github.event.action == 'closed'
