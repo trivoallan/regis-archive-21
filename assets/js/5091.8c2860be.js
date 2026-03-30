@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunk_regis_cli_report_viewer=globalThis.webpackChunk_regis_cli_report_viewer||[]).push([[5091],{15091(e,r,i){i.d(r,{createArchitectureServices:()=>c.S});var c=i(42020);i(56100)}}]);
