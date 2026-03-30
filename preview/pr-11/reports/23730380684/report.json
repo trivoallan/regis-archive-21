@@ -1,0 +1,2365 @@
+{
+  "version": "0.20.0",
+  "request": {
+    "url": "busybox",
+    "registry": "registry-1.docker.io",
+    "repository": "library/busybox",
+    "tag": "latest",
+    "digest": "sha256-1487d0af5f52b4ba31c7e465126ee2123fe3f2305d638e7827681e7cf6c83d5e",
+    "analyzers": [
+      "dockle",
+      "endoflife",
+      "freshness",
+      "hadolint",
+      "popularity",
+      "provenance",
+      "sbom",
+      "scorecarddev",
+      "size",
+      "skopeo",
+      "trivy",
+      "versioning"
+    ],
+    "timestamp": "2026-03-30T06:04:33.472018+00:00",
+    "metadata": {
+      "trigger": {
+        "user": " trivoallan",
+        "url": "https://github.com/trivoallan/regis-archive-21/actions/runs/23730380684"
+      }
+    }
+  },
+  "results": {
+    "endoflife": {
+      "analyzer": "endoflife",
+      "repository": "library/busybox",
+      "product": "busybox",
+      "product_found": false,
+      "tag": "latest",
+      "matched_cycle": null,
+      "is_eol": null,
+      "active_cycles_count": null,
+      "eol_cycles_count": null
+    },
+    "popularity": {
+      "analyzer": "popularity",
+      "repository": "library/busybox",
+      "available": true,
+      "pull_count": 12455981401,
+      "star_count": 3492,
+      "description": "Busybox base image.",
+      "last_updated": "2026-03-24T19:59:26.535531Z",
+      "date_registered": "2013-04-30T20:54:42Z",
+      "is_official": true
+    },
+    "freshness": {
+      "analyzer": "freshness",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "tag_created": "2024-09-26T21:31:42Z",
+      "latest_created": null,
+      "age_days": 549,
+      "behind_latest_days": null,
+      "is_latest": true
+    },
+    "hadolint": {
+      "analyzer": "hadolint",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "passed": false,
+      "issues_count": 1,
+      "issues_by_level": {
+        "error": 1,
+        "warning": 0,
+        "info": 0,
+        "style": 0
+      },
+      "issues": [
+        {
+          "code": "SC1088",
+          "level": "error",
+          "message": "Parsing stopped here. Invalid use of parentheses?",
+          "line": 2
+        }
+      ],
+      "dockerfile": "FROM scratch\nRUN BusyBox 1.37.0 (glibc), Debian 13"
+    },
+    "dockle": {
+      "analyzer": "dockle",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "passed": true,
+      "issues_count": 4,
+      "issues_by_level": {
+        "FATAL": 0,
+        "WARN": 2,
+        "INFO": 2,
+        "SKIP": 0,
+        "PASS": 0
+      },
+      "issues": [
+        {
+          "code": "CIS-DI-0001",
+          "level": "WARN",
+          "title": "Create a user for the container",
+          "alerts": [
+            "Last user should not be root"
+          ]
+        },
+        {
+          "code": "DKL-DI-0006",
+          "level": "WARN",
+          "title": "Avoid latest tag",
+          "alerts": [
+            "Avoid 'latest' tag"
+          ]
+        },
+        {
+          "code": "CIS-DI-0005",
+          "level": "INFO",
+          "title": "Enable Content trust for Docker",
+          "alerts": [
+            "export DOCKER_CONTENT_TRUST=1 before docker pull/build"
+          ]
+        },
+        {
+          "code": "CIS-DI-0006",
+          "level": "INFO",
+          "title": "Add HEALTHCHECK instruction to the container image",
+          "alerts": [
+            "not found HEALTHCHECK statement"
+          ]
+        }
+      ]
+    },
+    "provenance": {
+      "analyzer": "provenance",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "has_provenance": false,
+      "has_cosign_signature": false,
+      "source_tracked": false,
+      "indicators_count": 0,
+      "indicators": []
+    },
+    "sbom": {
+      "analyzer": "sbom",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "has_sbom": false,
+      "sbom_format": "CycloneDX",
+      "sbom_version": "1.6",
+      "total_components": 0,
+      "component_types": {},
+      "total_dependencies": 1,
+      "licenses": [],
+      "copyleft_licenses": [],
+      "components": []
+    },
+    "scorecarddev": {
+      "analyzer": "scorecarddev",
+      "repository": "library/busybox",
+      "source_repo": "https://github.com/docker-library/busybox",
+      "scorecard_available": false,
+      "score": null,
+      "checks": []
+    },
+    "versioning": {
+      "analyzer": "versioning",
+      "repository": "library/busybox",
+      "total_tags": 211,
+      "dominant_pattern": "semver-variant",
+      "semver_compliant_percentage": 91.9,
+      "patterns": [
+        {
+          "pattern": "named",
+          "count": 17,
+          "percentage": 8.1,
+          "examples": [
+            "buildroot-2013.08.1",
+            "buildroot-2014.02",
+            "glibc",
+            "latest",
+            "musl",
+            "stable",
+            "stable-glibc",
+            "stable-musl",
+            "stable-uclibc",
+            "ubuntu"
+          ]
+        },
+        {
+          "pattern": "numeric",
+          "count": 16,
+          "percentage": 7.6,
+          "examples": [
+            "1",
+            "1.23",
+            "1.24",
+            "1.25",
+            "1.26",
+            "1.27",
+            "1.28",
+            "1.29",
+            "1.30",
+            "1.31"
+          ]
+        },
+        {
+          "pattern": "numeric-variant",
+          "count": 47,
+          "percentage": 22.3,
+          "examples": [
+            "1-glibc",
+            "1-musl",
+            "1-ubuntu",
+            "1-uclibc",
+            "1.21-ubuntu",
+            "1.24-glibc",
+            "1.24-musl",
+            "1.24-uclibc",
+            "1.25-glibc",
+            "1.25-musl"
+          ]
+        },
+        {
+          "pattern": "semver",
+          "count": 34,
+          "percentage": 16.1,
+          "examples": [
+            "1.23.2",
+            "1.24.0",
+            "1.24.1",
+            "1.24.2",
+            "1.25.0",
+            "1.25.1",
+            "1.26.0",
+            "1.26.1",
+            "1.26.2",
+            "1.27.0"
+          ]
+        },
+        {
+          "pattern": "semver-variant",
+          "count": 97,
+          "percentage": 46.0,
+          "examples": [
+            "1.21.0-ubuntu",
+            "1.24.1-glibc",
+            "1.24.1-musl",
+            "1.24.1-uclibc",
+            "1.24.2-glibc",
+            "1.24.2-musl",
+            "1.24.2-uclibc",
+            "1.25.0-glibc",
+            "1.25.0-musl",
+            "1.25.0-uclibc"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "name": "glibc",
+          "count": 50,
+          "percentage": 23.7,
+          "examples": [
+            "1-glibc",
+            "1.24-glibc",
+            "1.24.1-glibc",
+            "1.24.2-glibc",
+            "1.25-glibc",
+            "1.25.0-glibc",
+            "1.25.1-glibc",
+            "1.26-glibc",
+            "1.26.0-glibc",
+            "1.26.1-glibc"
+          ]
+        },
+        {
+          "name": "musl",
+          "count": 50,
+          "percentage": 23.7,
+          "examples": [
+            "1-musl",
+            "1.24-musl",
+            "1.24.1-musl",
+            "1.24.2-musl",
+            "1.25-musl",
+            "1.25.0-musl",
+            "1.25.1-musl",
+            "1.26-musl",
+            "1.26.0-musl",
+            "1.26.1-musl"
+          ]
+        },
+        {
+          "name": "uclibc",
+          "count": 50,
+          "percentage": 23.7,
+          "examples": [
+            "1-uclibc",
+            "1.24-uclibc",
+            "1.24.1-uclibc",
+            "1.24.2-uclibc",
+            "1.25-uclibc",
+            "1.25.0-uclibc",
+            "1.25.1-uclibc",
+            "1.26-uclibc",
+            "1.26.0-uclibc",
+            "1.26.1-uclibc"
+          ]
+        },
+        {
+          "name": "ubuntu",
+          "count": 6,
+          "percentage": 2.8,
+          "examples": [
+            "1-ubuntu",
+            "1.21-ubuntu",
+            "1.21.0-ubuntu",
+            "ubuntu",
+            "ubuntu-12.04",
+            "ubuntu-14.04"
+          ]
+        }
+      ],
+      "aliases": [
+        "1",
+        "1-glibc",
+        "1-musl",
+        "1-ubuntu",
+        "1-uclibc",
+        "1.21-ubuntu",
+        "1.21.0-ubuntu",
+        "1.23",
+        "1.23.2",
+        "1.24",
+        "1.24-glibc",
+        "1.24-musl",
+        "1.24-uclibc",
+        "1.24.0",
+        "1.24.1",
+        "1.24.1-glibc",
+        "1.24.1-musl",
+        "1.24.1-uclibc",
+        "1.24.2",
+        "1.24.2-glibc",
+        "1.24.2-musl",
+        "1.24.2-uclibc",
+        "1.25",
+        "1.25-glibc",
+        "1.25-musl",
+        "1.25-uclibc",
+        "1.25.0",
+        "1.25.0-glibc",
+        "1.25.0-musl",
+        "1.25.0-uclibc",
+        "1.25.1",
+        "1.25.1-glibc",
+        "1.25.1-musl",
+        "1.25.1-uclibc",
+        "1.26",
+        "1.26-glibc",
+        "1.26-musl",
+        "1.26-uclibc",
+        "1.26.0",
+        "1.26.0-glibc",
+        "1.26.0-musl",
+        "1.26.0-uclibc",
+        "1.26.1",
+        "1.26.1-glibc",
+        "1.26.1-musl",
+        "1.26.1-uclibc",
+        "1.26.2",
+        "1.26.2-glibc",
+        "1.26.2-musl",
+        "1.26.2-uclibc",
+        "1.27",
+        "1.27-glibc",
+        "1.27-musl",
+        "1.27-uclibc",
+        "1.27.0",
+        "1.27.0-glibc",
+        "1.27.0-musl",
+        "1.27.0-uclibc",
+        "1.27.1",
+        "1.27.1-glibc",
+        "1.27.1-musl",
+        "1.27.1-uclibc",
+        "1.27.2",
+        "1.27.2-glibc",
+        "1.27.2-musl",
+        "1.27.2-uclibc",
+        "1.28",
+        "1.28-glibc",
+        "1.28-musl",
+        "1.28-uclibc",
+        "1.28.0",
+        "1.28.0-glibc",
+        "1.28.0-musl",
+        "1.28.0-uclibc",
+        "1.28.1",
+        "1.28.1-glibc",
+        "1.28.1-musl",
+        "1.28.1-uclibc",
+        "1.28.2",
+        "1.28.2-glibc",
+        "1.28.2-musl",
+        "1.28.2-uclibc",
+        "1.28.3",
+        "1.28.3-glibc",
+        "1.28.3-musl",
+        "1.28.3-uclibc",
+        "1.28.4",
+        "1.28.4-glibc",
+        "1.28.4-musl",
+        "1.28.4-uclibc",
+        "1.29",
+        "1.29-glibc",
+        "1.29-musl",
+        "1.29-uclibc",
+        "1.29.1",
+        "1.29.1-glibc",
+        "1.29.1-musl",
+        "1.29.1-uclibc",
+        "1.29.2",
+        "1.29.2-glibc",
+        "1.29.2-musl",
+        "1.29.2-uclibc",
+        "1.29.3",
+        "1.29.3-glibc",
+        "1.29.3-musl",
+        "1.29.3-uclibc",
+        "1.30",
+        "1.30-glibc",
+        "1.30-musl",
+        "1.30-uclibc",
+        "1.30.0",
+        "1.30.0-glibc",
+        "1.30.0-musl",
+        "1.30.0-uclibc",
+        "1.30.1",
+        "1.30.1-glibc",
+        "1.30.1-musl",
+        "1.30.1-uclibc",
+        "1.31",
+        "1.31-glibc",
+        "1.31-musl",
+        "1.31-uclibc",
+        "1.31.0",
+        "1.31.0-glibc",
+        "1.31.0-musl",
+        "1.31.0-uclibc",
+        "1.31.1",
+        "1.31.1-glibc",
+        "1.31.1-musl",
+        "1.31.1-uclibc",
+        "1.32",
+        "1.32-glibc",
+        "1.32-musl",
+        "1.32-uclibc",
+        "1.32.0",
+        "1.32.0-glibc",
+        "1.32.0-musl",
+        "1.32.0-uclibc",
+        "1.32.1",
+        "1.32.1-glibc",
+        "1.32.1-musl",
+        "1.32.1-uclibc",
+        "1.33",
+        "1.33-glibc",
+        "1.33-musl",
+        "1.33-uclibc",
+        "1.33.0",
+        "1.33.0-glibc",
+        "1.33.0-musl",
+        "1.33.0-uclibc",
+        "1.33.1",
+        "1.33.1-glibc",
+        "1.33.1-musl",
+        "1.33.1-uclibc",
+        "1.34",
+        "1.34-glibc",
+        "1.34-musl",
+        "1.34-uclibc",
+        "1.34.0",
+        "1.34.0-glibc",
+        "1.34.0-musl",
+        "1.34.0-uclibc",
+        "1.34.1",
+        "1.34.1-glibc",
+        "1.34.1-musl",
+        "1.34.1-uclibc",
+        "1.35",
+        "1.35-glibc",
+        "1.35-musl",
+        "1.35-uclibc",
+        "1.35.0",
+        "1.35.0-glibc",
+        "1.35.0-musl",
+        "1.35.0-uclibc",
+        "1.36",
+        "1.36-glibc",
+        "1.36-musl",
+        "1.36-uclibc",
+        "1.36.0",
+        "1.36.0-glibc",
+        "1.36.0-musl",
+        "1.36.0-uclibc",
+        "1.36.1",
+        "1.36.1-glibc",
+        "1.36.1-musl",
+        "1.36.1-uclibc",
+        "1.37",
+        "1.37-glibc",
+        "1.37-musl",
+        "1.37-uclibc",
+        "1.37.0",
+        "1.37.0-glibc",
+        "1.37.0-musl",
+        "1.37.0-uclibc",
+        "buildroot-2013.08.1",
+        "buildroot-2014.02",
+        "glibc",
+        "musl",
+        "stable",
+        "stable-glibc",
+        "stable-musl",
+        "stable-uclibc",
+        "ubuntu",
+        "ubuntu-12.04",
+        "ubuntu-14.04",
+        "uclibc",
+        "unstable",
+        "unstable-glibc",
+        "unstable-musl",
+        "unstable-uclibc"
+      ],
+      "release_lines": [
+        "1",
+        "1.37",
+        "1.37.0"
+      ]
+    },
+    "skopeo": {
+      "analyzer": "skopeo",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "platforms": [
+        {
+          "architecture": "amd64",
+          "os": "linux",
+          "digest": "sha256:b8d1827e38a1d49cd17217efd7b07d689e4ea1744e39c7dcbb95533d175bea65",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:85018c50e23d1abd4dddbcfd55c5b7ee6516e956376e882eaa1b6009fbb2cc9b",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "arm",
+          "os": "linux",
+          "digest": "sha256:9c236358041e0978a7d75186dc981e46b9248b87a13fab65ddc2409950bfbe05",
+          "variant": "v5",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:746ece13b4b267510484033c6b612a64e04fc32345321a159148b3894f6c79ef",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "arm",
+          "os": "linux",
+          "digest": "sha256:d1ba3375824b1e605503225e2f42280aea16d388fb2e400b9fe7c4d93b9e8d42",
+          "variant": "v6",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "user": ""
+        },
+        {
+          "architecture": "arm",
+          "os": "linux",
+          "digest": "sha256:4132e5c776cda2f7f1937f5ee9d4c67e894900ac1643470b910ee92096e84de9",
+          "variant": "v7",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:9e3e867b9f5db234dd756639e86d932c3c20f9d73610f80827d51ea73ddd708f",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "arm64",
+          "os": "linux",
+          "digest": "sha256:c4e5b27bf840ba1ebd5568b6b914f6926f3559b2ad4f505b1f37aae483b907d6",
+          "variant": "v8",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:9e51b0919133deba3b661c2c86620db26e01a2cb9f5506de7a2e396181456a5a",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "386",
+          "os": "linux",
+          "digest": "sha256:ea84d3a2fd24875f68dc79b733972acadf9ef707baaf0f2cb605ddb2be403826",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:c3b25931da4710821a73d12d0bfe36aa48bed34d0f21716216cccfd77a40e478",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "ppc64le",
+          "os": "linux",
+          "digest": "sha256:a6fa48de578b85d46db9cbc3d0e7b7cca4ee93b42df39bba065f87ab74d5d091",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:8ea22876e866cb07b3fe62b8649951ffc5d884192b33def4a6c657529000bd8b",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "riscv64",
+          "os": "linux",
+          "digest": "sha256:3a38f165466deaa661f2796c3825b27342c0cb861f9f1e2d6a98d9a6adbb5eb0",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:fefa864756908b3a1c8d2e0f30b20923d181340e2b183f95ae497c831b7a86e5",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "s390x",
+          "os": "linux",
+          "digest": "sha256:b6ed3dc70d0294a3159416179efa3219ab3935bae95db7138dd374c33ff5abb5",
+          "created": "2024-09-26T21:31:42Z",
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        },
+        {
+          "architecture": "unknown",
+          "os": "unknown",
+          "digest": "sha256:e8e18974bd05d41857c2c72f0d21288475f082126b771f6ddd40de5d8633f967",
+          "created": null,
+          "labels": {},
+          "layers_count": 1,
+          "size": 0,
+          "exposed_ports": [],
+          "env": [],
+          "variant": null,
+          "user": ""
+        }
+      ],
+      "inspect": {},
+      "tags": [
+        "1",
+        "1-glibc",
+        "1-musl",
+        "1-ubuntu",
+        "1-uclibc",
+        "1.21-ubuntu",
+        "1.21.0-ubuntu",
+        "1.23",
+        "1.23.2",
+        "1.24",
+        "1.24-glibc",
+        "1.24-musl",
+        "1.24-uclibc",
+        "1.24.0",
+        "1.24.1",
+        "1.24.1-glibc",
+        "1.24.1-musl",
+        "1.24.1-uclibc",
+        "1.24.2",
+        "1.24.2-glibc",
+        "1.24.2-musl",
+        "1.24.2-uclibc",
+        "1.25",
+        "1.25-glibc",
+        "1.25-musl",
+        "1.25-uclibc",
+        "1.25.0",
+        "1.25.0-glibc",
+        "1.25.0-musl",
+        "1.25.0-uclibc",
+        "1.25.1",
+        "1.25.1-glibc",
+        "1.25.1-musl",
+        "1.25.1-uclibc",
+        "1.26",
+        "1.26-glibc",
+        "1.26-musl",
+        "1.26-uclibc",
+        "1.26.0",
+        "1.26.0-glibc",
+        "1.26.0-musl",
+        "1.26.0-uclibc",
+        "1.26.1",
+        "1.26.1-glibc",
+        "1.26.1-musl",
+        "1.26.1-uclibc",
+        "1.26.2",
+        "1.26.2-glibc",
+        "1.26.2-musl",
+        "1.26.2-uclibc",
+        "1.27",
+        "1.27-glibc",
+        "1.27-musl",
+        "1.27-uclibc",
+        "1.27.0",
+        "1.27.0-glibc",
+        "1.27.0-musl",
+        "1.27.0-uclibc",
+        "1.27.1",
+        "1.27.1-glibc",
+        "1.27.1-musl",
+        "1.27.1-uclibc",
+        "1.27.2",
+        "1.27.2-glibc",
+        "1.27.2-musl",
+        "1.27.2-uclibc",
+        "1.28",
+        "1.28-glibc",
+        "1.28-musl",
+        "1.28-uclibc",
+        "1.28.0",
+        "1.28.0-glibc",
+        "1.28.0-musl",
+        "1.28.0-uclibc",
+        "1.28.1",
+        "1.28.1-glibc",
+        "1.28.1-musl",
+        "1.28.1-uclibc",
+        "1.28.2",
+        "1.28.2-glibc",
+        "1.28.2-musl",
+        "1.28.2-uclibc",
+        "1.28.3",
+        "1.28.3-glibc",
+        "1.28.3-musl",
+        "1.28.3-uclibc",
+        "1.28.4",
+        "1.28.4-glibc",
+        "1.28.4-musl",
+        "1.28.4-uclibc",
+        "1.29",
+        "1.29-glibc",
+        "1.29-musl",
+        "1.29-uclibc",
+        "1.29.1",
+        "1.29.1-glibc",
+        "1.29.1-musl",
+        "1.29.1-uclibc",
+        "1.29.2",
+        "1.29.2-glibc",
+        "1.29.2-musl",
+        "1.29.2-uclibc",
+        "1.29.3",
+        "1.29.3-glibc",
+        "1.29.3-musl",
+        "1.29.3-uclibc",
+        "1.30",
+        "1.30-glibc",
+        "1.30-musl",
+        "1.30-uclibc",
+        "1.30.0",
+        "1.30.0-glibc",
+        "1.30.0-musl",
+        "1.30.0-uclibc",
+        "1.30.1",
+        "1.30.1-glibc",
+        "1.30.1-musl",
+        "1.30.1-uclibc",
+        "1.31",
+        "1.31-glibc",
+        "1.31-musl",
+        "1.31-uclibc",
+        "1.31.0",
+        "1.31.0-glibc",
+        "1.31.0-musl",
+        "1.31.0-uclibc",
+        "1.31.1",
+        "1.31.1-glibc",
+        "1.31.1-musl",
+        "1.31.1-uclibc",
+        "1.32",
+        "1.32-glibc",
+        "1.32-musl",
+        "1.32-uclibc",
+        "1.32.0",
+        "1.32.0-glibc",
+        "1.32.0-musl",
+        "1.32.0-uclibc",
+        "1.32.1",
+        "1.32.1-glibc",
+        "1.32.1-musl",
+        "1.32.1-uclibc",
+        "1.33",
+        "1.33-glibc",
+        "1.33-musl",
+        "1.33-uclibc",
+        "1.33.0",
+        "1.33.0-glibc",
+        "1.33.0-musl",
+        "1.33.0-uclibc",
+        "1.33.1",
+        "1.33.1-glibc",
+        "1.33.1-musl",
+        "1.33.1-uclibc",
+        "1.34",
+        "1.34-glibc",
+        "1.34-musl",
+        "1.34-uclibc",
+        "1.34.0",
+        "1.34.0-glibc",
+        "1.34.0-musl",
+        "1.34.0-uclibc",
+        "1.34.1",
+        "1.34.1-glibc",
+        "1.34.1-musl",
+        "1.34.1-uclibc",
+        "1.35",
+        "1.35-glibc",
+        "1.35-musl",
+        "1.35-uclibc",
+        "1.35.0",
+        "1.35.0-glibc",
+        "1.35.0-musl",
+        "1.35.0-uclibc",
+        "1.36",
+        "1.36-glibc",
+        "1.36-musl",
+        "1.36-uclibc",
+        "1.36.0",
+        "1.36.0-glibc",
+        "1.36.0-musl",
+        "1.36.0-uclibc",
+        "1.36.1",
+        "1.36.1-glibc",
+        "1.36.1-musl",
+        "1.36.1-uclibc",
+        "1.37",
+        "1.37-glibc",
+        "1.37-musl",
+        "1.37-uclibc",
+        "1.37.0",
+        "1.37.0-glibc",
+        "1.37.0-musl",
+        "1.37.0-uclibc",
+        "buildroot-2013.08.1",
+        "buildroot-2014.02",
+        "glibc",
+        "latest",
+        "musl",
+        "stable",
+        "stable-glibc",
+        "stable-musl",
+        "stable-uclibc",
+        "ubuntu",
+        "ubuntu-12.04",
+        "ubuntu-14.04",
+        "uclibc",
+        "unstable",
+        "unstable-glibc",
+        "unstable-musl",
+        "unstable-uclibc"
+      ]
+    },
+    "size": {
+      "analyzer": "size",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "multi_arch": true,
+      "total_compressed_bytes": 2211857,
+      "total_compressed_human": "2.1 MB",
+      "layer_count": 1,
+      "config_size_bytes": 0,
+      "layers": [],
+      "platforms": [
+        {
+          "platform": "linux/amd64",
+          "compressed_bytes": 2211857,
+          "compressed_human": "2.1 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/arm/v5",
+          "compressed_bytes": 1824951,
+          "compressed_human": "1.7 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/arm/v6",
+          "compressed_bytes": 954372,
+          "compressed_human": "932.0 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/arm/v7",
+          "compressed_bytes": 1593372,
+          "compressed_human": "1.5 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/arm64/v8",
+          "compressed_bytes": 1901182,
+          "compressed_human": "1.8 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/386",
+          "compressed_bytes": 2286260,
+          "compressed_human": "2.2 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/ppc64le",
+          "compressed_bytes": 2526228,
+          "compressed_human": "2.4 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 3371,
+          "compressed_human": "3.3 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/riscv64",
+          "compressed_bytes": 1942635,
+          "compressed_human": "1.9 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        },
+        {
+          "platform": "linux/s390x",
+          "compressed_bytes": 2048251,
+          "compressed_human": "2.0 MB",
+          "layer_count": 1
+        },
+        {
+          "platform": "unknown/unknown",
+          "compressed_bytes": 2193,
+          "compressed_human": "2.1 KB",
+          "layer_count": 1
+        }
+      ]
+    },
+    "trivy": {
+      "analyzer": "trivy",
+      "repository": "library/busybox",
+      "tag": "latest",
+      "trivy_version": "2",
+      "vulnerability_count": 0,
+      "critical_count": 0,
+      "high_count": 0,
+      "medium_count": 0,
+      "low_count": 0,
+      "unknown_count": 0,
+      "fixed_count": 0,
+      "secrets_count": 0,
+      "targets": []
+    }
+  },
+  "metadata": {
+    "trigger": {
+      "user": " trivoallan",
+      "url": "https://github.com/trivoallan/regis-archive-21/actions/runs/23730380684"
+    }
+  },
+  "rules": [
+    {
+      "slug": "cve-critical",
+      "description": "Max allowed violations for a given severity level.",
+      "level": "critical",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Number of critical vulnerabilities is within limits.",
+      "analyzers": [
+        "trivy"
+      ]
+    },
+    {
+      "slug": "env-blacklist",
+      "description": "Image must not contain forbidden environment variables.",
+      "level": "critical",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "No forbidden environment variables found.",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "no-root",
+      "description": "Image must not run as root.",
+      "level": "critical",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Image does not run as 'root'.",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "registry-domain-whitelist",
+      "description": "Checks if requested image registry domain is in the domains list.",
+      "level": "critical",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Image registry domain 'registry-1.docker.io' is in the domains list.",
+      "analyzers": []
+    },
+    {
+      "slug": "secret-scan",
+      "description": "No secrets or credentials should be embedded in the image.",
+      "level": "critical",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "No secrets detected in the image.",
+      "analyzers": [
+        "trivy"
+      ]
+    },
+    {
+      "slug": "cve-fixable",
+      "description": "All vulnerabilities should be fixed if a patch exists.",
+      "level": "warning",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "All vulnerabilities with available fixes have been patched.",
+      "analyzers": [
+        "trivy"
+      ]
+    },
+    {
+      "slug": "cve-high",
+      "description": "Max allowed violations for a given severity level.",
+      "level": "warning",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Number of high vulnerabilities is within limits.",
+      "analyzers": [
+        "trivy"
+      ]
+    },
+    {
+      "slug": "exposed-ports-whitelist",
+      "description": "Image exposes permitted ports.",
+      "level": "warning",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "All exposed ports are allowed.",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "layers-count",
+      "description": "Image has an acceptable number of layers.",
+      "level": "warning",
+      "tags": [
+        "performance"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Image has 1 layers.",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "max-size",
+      "description": "Image size is within limits.",
+      "level": "warning",
+      "tags": [
+        "hygiene"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Image size is within limits (0 bytes).",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "severity-count",
+      "description": "Max allowed issues for a given severity level.",
+      "level": "warning",
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Dockle FATAL issues are within limits.",
+      "analyzers": [
+        "dockle"
+      ]
+    },
+    {
+      "slug": "platforms-count",
+      "description": "Image should support multiple platforms.",
+      "level": "info",
+      "tags": [
+        "compatibility"
+      ],
+      "passed": true,
+      "status": "passed",
+      "message": "Image supports 17 platforms.",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "has-sbom",
+      "description": "Image must provide a Software Bill of Materials.",
+      "level": "warning",
+      "tags": [
+        "compliance"
+      ],
+      "passed": false,
+      "status": "failed",
+      "message": "No SBOM could be generated or found for this image.",
+      "analyzers": [
+        "sbom"
+      ]
+    },
+    {
+      "slug": "required-labels",
+      "description": "Image must have required OCI labels.",
+      "level": "warning",
+      "tags": [
+        "metadata"
+      ],
+      "passed": false,
+      "status": "failed",
+      "message": "Image is missing one or more required labels: ['org.opencontainers.image.source'].",
+      "analyzers": [
+        "skopeo"
+      ]
+    },
+    {
+      "slug": "scorecard-min",
+      "description": "OpenSSF Scorecard score is above the threshold.",
+      "level": "warning",
+      "tags": [
+        "security"
+      ],
+      "passed": false,
+      "status": "incomplete",
+      "message": "Scorecard score is too low: None (min required: 5.0).",
+      "analyzers": [
+        "scorecarddev"
+      ]
+    },
+    {
+      "slug": "severity-count",
+      "description": "Max allowed violations for a given severity level.",
+      "level": "warning",
+      "tags": [
+        "best-practices"
+      ],
+      "passed": false,
+      "status": "failed",
+      "message": "Hadolint found 1 error issues (max allowed: 0).",
+      "analyzers": [
+        "hadolint"
+      ]
+    },
+    {
+      "slug": "age",
+      "description": "Image should be less than expected days old.",
+      "level": "info",
+      "tags": [
+        "freshness"
+      ],
+      "passed": false,
+      "status": "failed",
+      "message": "Image is older than 90 days (549 days).",
+      "analyzers": [
+        "freshness"
+      ]
+    },
+    {
+      "slug": "no-latest",
+      "description": "Image tag should not be 'latest'.",
+      "level": "info",
+      "tags": [
+        "lifecycle"
+      ],
+      "passed": false,
+      "status": "failed",
+      "message": "Image is using the 'latest' tag. Use immutable version tags instead.",
+      "analyzers": []
+    }
+  ],
+  "rules_summary": {
+    "score": 67,
+    "total": [
+      "cve-critical",
+      "env-blacklist",
+      "no-root",
+      "registry-domain-whitelist",
+      "secret-scan",
+      "cve-fixable",
+      "cve-high",
+      "exposed-ports-whitelist",
+      "layers-count",
+      "max-size",
+      "severity-count",
+      "platforms-count",
+      "has-sbom",
+      "required-labels",
+      "scorecard-min",
+      "severity-count",
+      "age",
+      "no-latest"
+    ],
+    "passed": [
+      "cve-critical",
+      "env-blacklist",
+      "no-root",
+      "registry-domain-whitelist",
+      "secret-scan",
+      "cve-fixable",
+      "cve-high",
+      "exposed-ports-whitelist",
+      "layers-count",
+      "max-size",
+      "severity-count",
+      "platforms-count"
+    ],
+    "by_tag": {
+      "security": {
+        "rules": [
+          "cve-critical",
+          "env-blacklist",
+          "no-root",
+          "registry-domain-whitelist",
+          "secret-scan",
+          "cve-fixable",
+          "cve-high",
+          "exposed-ports-whitelist",
+          "severity-count",
+          "scorecard-min"
+        ],
+        "passed_rules": [
+          "cve-critical",
+          "env-blacklist",
+          "no-root",
+          "registry-domain-whitelist",
+          "secret-scan",
+          "cve-fixable",
+          "cve-high",
+          "exposed-ports-whitelist",
+          "severity-count"
+        ],
+        "score": 90
+      },
+      "performance": {
+        "rules": [
+          "layers-count"
+        ],
+        "passed_rules": [
+          "layers-count"
+        ],
+        "score": 100
+      },
+      "hygiene": {
+        "rules": [
+          "max-size"
+        ],
+        "passed_rules": [
+          "max-size"
+        ],
+        "score": 100
+      },
+      "compatibility": {
+        "rules": [
+          "platforms-count"
+        ],
+        "passed_rules": [
+          "platforms-count"
+        ],
+        "score": 100
+      },
+      "compliance": {
+        "rules": [
+          "has-sbom"
+        ],
+        "passed_rules": [],
+        "score": 0
+      },
+      "metadata": {
+        "rules": [
+          "required-labels"
+        ],
+        "passed_rules": [],
+        "score": 0
+      },
+      "best-practices": {
+        "rules": [
+          "severity-count"
+        ],
+        "passed_rules": [],
+        "score": 0
+      },
+      "freshness": {
+        "rules": [
+          "age"
+        ],
+        "passed_rules": [],
+        "score": 0
+      },
+      "lifecycle": {
+        "rules": [
+          "no-latest"
+        ],
+        "passed_rules": [],
+        "score": 0
+      }
+    }
+  },
+  "playbooks": [
+    {
+      "playbook_name": "RegiS Default Playbook",
+      "score": 0,
+      "total_scorecards": 0,
+      "passed_scorecards": 0,
+      "pages": [],
+      "rules": [
+        {
+          "slug": "cve-critical",
+          "description": "Max allowed violations for a given severity level.",
+          "level": "critical",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Number of critical vulnerabilities is within limits.",
+          "analyzers": [
+            "trivy"
+          ]
+        },
+        {
+          "slug": "env-blacklist",
+          "description": "Image must not contain forbidden environment variables.",
+          "level": "critical",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "No forbidden environment variables found.",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "no-root",
+          "description": "Image must not run as root.",
+          "level": "critical",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Image does not run as 'root'.",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "registry-domain-whitelist",
+          "description": "Checks if requested image registry domain is in the domains list.",
+          "level": "critical",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Image registry domain 'registry-1.docker.io' is in the domains list.",
+          "analyzers": []
+        },
+        {
+          "slug": "secret-scan",
+          "description": "No secrets or credentials should be embedded in the image.",
+          "level": "critical",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "No secrets detected in the image.",
+          "analyzers": [
+            "trivy"
+          ]
+        },
+        {
+          "slug": "cve-fixable",
+          "description": "All vulnerabilities should be fixed if a patch exists.",
+          "level": "warning",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "All vulnerabilities with available fixes have been patched.",
+          "analyzers": [
+            "trivy"
+          ]
+        },
+        {
+          "slug": "cve-high",
+          "description": "Max allowed violations for a given severity level.",
+          "level": "warning",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Number of high vulnerabilities is within limits.",
+          "analyzers": [
+            "trivy"
+          ]
+        },
+        {
+          "slug": "exposed-ports-whitelist",
+          "description": "Image exposes permitted ports.",
+          "level": "warning",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "All exposed ports are allowed.",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "layers-count",
+          "description": "Image has an acceptable number of layers.",
+          "level": "warning",
+          "tags": [
+            "performance"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Image has 1 layers.",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "max-size",
+          "description": "Image size is within limits.",
+          "level": "warning",
+          "tags": [
+            "hygiene"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Image size is within limits (0 bytes).",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "severity-count",
+          "description": "Max allowed issues for a given severity level.",
+          "level": "warning",
+          "tags": [
+            "security"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Dockle FATAL issues are within limits.",
+          "analyzers": [
+            "dockle"
+          ]
+        },
+        {
+          "slug": "platforms-count",
+          "description": "Image should support multiple platforms.",
+          "level": "info",
+          "tags": [
+            "compatibility"
+          ],
+          "passed": true,
+          "status": "passed",
+          "message": "Image supports 17 platforms.",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "has-sbom",
+          "description": "Image must provide a Software Bill of Materials.",
+          "level": "warning",
+          "tags": [
+            "compliance"
+          ],
+          "passed": false,
+          "status": "failed",
+          "message": "No SBOM could be generated or found for this image.",
+          "analyzers": [
+            "sbom"
+          ]
+        },
+        {
+          "slug": "required-labels",
+          "description": "Image must have required OCI labels.",
+          "level": "warning",
+          "tags": [
+            "metadata"
+          ],
+          "passed": false,
+          "status": "failed",
+          "message": "Image is missing one or more required labels: ['org.opencontainers.image.source'].",
+          "analyzers": [
+            "skopeo"
+          ]
+        },
+        {
+          "slug": "scorecard-min",
+          "description": "OpenSSF Scorecard score is above the threshold.",
+          "level": "warning",
+          "tags": [
+            "security"
+          ],
+          "passed": false,
+          "status": "incomplete",
+          "message": "Scorecard score is too low: None (min required: 5.0).",
+          "analyzers": [
+            "scorecarddev"
+          ]
+        },
+        {
+          "slug": "severity-count",
+          "description": "Max allowed violations for a given severity level.",
+          "level": "warning",
+          "tags": [
+            "best-practices"
+          ],
+          "passed": false,
+          "status": "failed",
+          "message": "Hadolint found 1 error issues (max allowed: 0).",
+          "analyzers": [
+            "hadolint"
+          ]
+        },
+        {
+          "slug": "age",
+          "description": "Image should be less than expected days old.",
+          "level": "info",
+          "tags": [
+            "freshness"
+          ],
+          "passed": false,
+          "status": "failed",
+          "message": "Image is older than 90 days (549 days).",
+          "analyzers": [
+            "freshness"
+          ]
+        },
+        {
+          "slug": "no-latest",
+          "description": "Image tag should not be 'latest'.",
+          "level": "info",
+          "tags": [
+            "lifecycle"
+          ],
+          "passed": false,
+          "status": "failed",
+          "message": "Image is using the 'latest' tag. Use immutable version tags instead.",
+          "analyzers": []
+        }
+      ],
+      "rules_summary": {
+        "score": 67,
+        "total": [
+          "cve-critical",
+          "env-blacklist",
+          "no-root",
+          "registry-domain-whitelist",
+          "secret-scan",
+          "cve-fixable",
+          "cve-high",
+          "exposed-ports-whitelist",
+          "layers-count",
+          "max-size",
+          "severity-count",
+          "platforms-count",
+          "has-sbom",
+          "required-labels",
+          "scorecard-min",
+          "severity-count",
+          "age",
+          "no-latest"
+        ],
+        "passed": [
+          "cve-critical",
+          "env-blacklist",
+          "no-root",
+          "registry-domain-whitelist",
+          "secret-scan",
+          "cve-fixable",
+          "cve-high",
+          "exposed-ports-whitelist",
+          "layers-count",
+          "max-size",
+          "severity-count",
+          "platforms-count"
+        ],
+        "by_tag": {
+          "security": {
+            "rules": [
+              "cve-critical",
+              "env-blacklist",
+              "no-root",
+              "registry-domain-whitelist",
+              "secret-scan",
+              "cve-fixable",
+              "cve-high",
+              "exposed-ports-whitelist",
+              "severity-count",
+              "scorecard-min"
+            ],
+            "passed_rules": [
+              "cve-critical",
+              "env-blacklist",
+              "no-root",
+              "registry-domain-whitelist",
+              "secret-scan",
+              "cve-fixable",
+              "cve-high",
+              "exposed-ports-whitelist",
+              "severity-count"
+            ],
+            "score": 90
+          },
+          "performance": {
+            "rules": [
+              "layers-count"
+            ],
+            "passed_rules": [
+              "layers-count"
+            ],
+            "score": 100
+          },
+          "hygiene": {
+            "rules": [
+              "max-size"
+            ],
+            "passed_rules": [
+              "max-size"
+            ],
+            "score": 100
+          },
+          "compatibility": {
+            "rules": [
+              "platforms-count"
+            ],
+            "passed_rules": [
+              "platforms-count"
+            ],
+            "score": 100
+          },
+          "compliance": {
+            "rules": [
+              "has-sbom"
+            ],
+            "passed_rules": [],
+            "score": 0
+          },
+          "metadata": {
+            "rules": [
+              "required-labels"
+            ],
+            "passed_rules": [],
+            "score": 0
+          },
+          "best-practices": {
+            "rules": [
+              "severity-count"
+            ],
+            "passed_rules": [],
+            "score": 0
+          },
+          "freshness": {
+            "rules": [
+              "age"
+            ],
+            "passed_rules": [],
+            "score": 0
+          },
+          "lifecycle": {
+            "rules": [
+              "no-latest"
+            ],
+            "passed_rules": [],
+            "score": 0
+          }
+        }
+      },
+      "slug": null,
+      "tier": "Bronze",
+      "badges": [
+        {
+          "slug": "freshness-stale",
+          "scope": "Freshness",
+          "value": "Stale",
+          "class": "warning",
+          "label": "Freshness: Stale"
+        }
+      ],
+      "mr_description_checklists": [
+        {
+          "title": "📝 Review Checklist",
+          "items": [
+            {
+              "label": "Revue de sécurité réalisée",
+              "checked": false
+            },
+            {
+              "label": "Aucune vulnérabilité CRITIQUE détectée",
+              "checked": true
+            },
+            {
+              "label": "Image issue d'un registre de confiance",
+              "checked": true
+            },
+            {
+              "label": "Image ne tourne pas en root",
+              "checked": true
+            }
+          ]
+        }
+      ],
+      "mr_templates": [
+        {
+          "url": "https://github.com/trivoallan/regis-cli",
+          "directory": "regis_cli/cookiecutters/mr-evidence"
+        }
+      ],
+      "_meta": {
+        "source_name": "default"
+      }
+    }
+  ],
+  "playbook": {
+    "playbook_name": "RegiS Default Playbook",
+    "score": 0,
+    "total_scorecards": 0,
+    "passed_scorecards": 0,
+    "pages": [],
+    "rules": [
+      {
+        "slug": "cve-critical",
+        "description": "Max allowed violations for a given severity level.",
+        "level": "critical",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Number of critical vulnerabilities is within limits.",
+        "analyzers": [
+          "trivy"
+        ]
+      },
+      {
+        "slug": "env-blacklist",
+        "description": "Image must not contain forbidden environment variables.",
+        "level": "critical",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "No forbidden environment variables found.",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "no-root",
+        "description": "Image must not run as root.",
+        "level": "critical",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Image does not run as 'root'.",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "registry-domain-whitelist",
+        "description": "Checks if requested image registry domain is in the domains list.",
+        "level": "critical",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Image registry domain 'registry-1.docker.io' is in the domains list.",
+        "analyzers": []
+      },
+      {
+        "slug": "secret-scan",
+        "description": "No secrets or credentials should be embedded in the image.",
+        "level": "critical",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "No secrets detected in the image.",
+        "analyzers": [
+          "trivy"
+        ]
+      },
+      {
+        "slug": "cve-fixable",
+        "description": "All vulnerabilities should be fixed if a patch exists.",
+        "level": "warning",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "All vulnerabilities with available fixes have been patched.",
+        "analyzers": [
+          "trivy"
+        ]
+      },
+      {
+        "slug": "cve-high",
+        "description": "Max allowed violations for a given severity level.",
+        "level": "warning",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Number of high vulnerabilities is within limits.",
+        "analyzers": [
+          "trivy"
+        ]
+      },
+      {
+        "slug": "exposed-ports-whitelist",
+        "description": "Image exposes permitted ports.",
+        "level": "warning",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "All exposed ports are allowed.",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "layers-count",
+        "description": "Image has an acceptable number of layers.",
+        "level": "warning",
+        "tags": [
+          "performance"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Image has 1 layers.",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "max-size",
+        "description": "Image size is within limits.",
+        "level": "warning",
+        "tags": [
+          "hygiene"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Image size is within limits (0 bytes).",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "severity-count",
+        "description": "Max allowed issues for a given severity level.",
+        "level": "warning",
+        "tags": [
+          "security"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Dockle FATAL issues are within limits.",
+        "analyzers": [
+          "dockle"
+        ]
+      },
+      {
+        "slug": "platforms-count",
+        "description": "Image should support multiple platforms.",
+        "level": "info",
+        "tags": [
+          "compatibility"
+        ],
+        "passed": true,
+        "status": "passed",
+        "message": "Image supports 17 platforms.",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "has-sbom",
+        "description": "Image must provide a Software Bill of Materials.",
+        "level": "warning",
+        "tags": [
+          "compliance"
+        ],
+        "passed": false,
+        "status": "failed",
+        "message": "No SBOM could be generated or found for this image.",
+        "analyzers": [
+          "sbom"
+        ]
+      },
+      {
+        "slug": "required-labels",
+        "description": "Image must have required OCI labels.",
+        "level": "warning",
+        "tags": [
+          "metadata"
+        ],
+        "passed": false,
+        "status": "failed",
+        "message": "Image is missing one or more required labels: ['org.opencontainers.image.source'].",
+        "analyzers": [
+          "skopeo"
+        ]
+      },
+      {
+        "slug": "scorecard-min",
+        "description": "OpenSSF Scorecard score is above the threshold.",
+        "level": "warning",
+        "tags": [
+          "security"
+        ],
+        "passed": false,
+        "status": "incomplete",
+        "message": "Scorecard score is too low: None (min required: 5.0).",
+        "analyzers": [
+          "scorecarddev"
+        ]
+      },
+      {
+        "slug": "severity-count",
+        "description": "Max allowed violations for a given severity level.",
+        "level": "warning",
+        "tags": [
+          "best-practices"
+        ],
+        "passed": false,
+        "status": "failed",
+        "message": "Hadolint found 1 error issues (max allowed: 0).",
+        "analyzers": [
+          "hadolint"
+        ]
+      },
+      {
+        "slug": "age",
+        "description": "Image should be less than expected days old.",
+        "level": "info",
+        "tags": [
+          "freshness"
+        ],
+        "passed": false,
+        "status": "failed",
+        "message": "Image is older than 90 days (549 days).",
+        "analyzers": [
+          "freshness"
+        ]
+      },
+      {
+        "slug": "no-latest",
+        "description": "Image tag should not be 'latest'.",
+        "level": "info",
+        "tags": [
+          "lifecycle"
+        ],
+        "passed": false,
+        "status": "failed",
+        "message": "Image is using the 'latest' tag. Use immutable version tags instead.",
+        "analyzers": []
+      }
+    ],
+    "rules_summary": {
+      "score": 67,
+      "total": [
+        "cve-critical",
+        "env-blacklist",
+        "no-root",
+        "registry-domain-whitelist",
+        "secret-scan",
+        "cve-fixable",
+        "cve-high",
+        "exposed-ports-whitelist",
+        "layers-count",
+        "max-size",
+        "severity-count",
+        "platforms-count",
+        "has-sbom",
+        "required-labels",
+        "scorecard-min",
+        "severity-count",
+        "age",
+        "no-latest"
+      ],
+      "passed": [
+        "cve-critical",
+        "env-blacklist",
+        "no-root",
+        "registry-domain-whitelist",
+        "secret-scan",
+        "cve-fixable",
+        "cve-high",
+        "exposed-ports-whitelist",
+        "layers-count",
+        "max-size",
+        "severity-count",
+        "platforms-count"
+      ],
+      "by_tag": {
+        "security": {
+          "rules": [
+            "cve-critical",
+            "env-blacklist",
+            "no-root",
+            "registry-domain-whitelist",
+            "secret-scan",
+            "cve-fixable",
+            "cve-high",
+            "exposed-ports-whitelist",
+            "severity-count",
+            "scorecard-min"
+          ],
+          "passed_rules": [
+            "cve-critical",
+            "env-blacklist",
+            "no-root",
+            "registry-domain-whitelist",
+            "secret-scan",
+            "cve-fixable",
+            "cve-high",
+            "exposed-ports-whitelist",
+            "severity-count"
+          ],
+          "score": 90
+        },
+        "performance": {
+          "rules": [
+            "layers-count"
+          ],
+          "passed_rules": [
+            "layers-count"
+          ],
+          "score": 100
+        },
+        "hygiene": {
+          "rules": [
+            "max-size"
+          ],
+          "passed_rules": [
+            "max-size"
+          ],
+          "score": 100
+        },
+        "compatibility": {
+          "rules": [
+            "platforms-count"
+          ],
+          "passed_rules": [
+            "platforms-count"
+          ],
+          "score": 100
+        },
+        "compliance": {
+          "rules": [
+            "has-sbom"
+          ],
+          "passed_rules": [],
+          "score": 0
+        },
+        "metadata": {
+          "rules": [
+            "required-labels"
+          ],
+          "passed_rules": [],
+          "score": 0
+        },
+        "best-practices": {
+          "rules": [
+            "severity-count"
+          ],
+          "passed_rules": [],
+          "score": 0
+        },
+        "freshness": {
+          "rules": [
+            "age"
+          ],
+          "passed_rules": [],
+          "score": 0
+        },
+        "lifecycle": {
+          "rules": [
+            "no-latest"
+          ],
+          "passed_rules": [],
+          "score": 0
+        }
+      }
+    },
+    "slug": null,
+    "tier": "Bronze",
+    "badges": [
+      {
+        "slug": "freshness-stale",
+        "scope": "Freshness",
+        "value": "Stale",
+        "class": "warning",
+        "label": "Freshness: Stale"
+      }
+    ],
+    "mr_description_checklists": [
+      {
+        "title": "📝 Review Checklist",
+        "items": [
+          {
+            "label": "Revue de sécurité réalisée",
+            "checked": false
+          },
+          {
+            "label": "Aucune vulnérabilité CRITIQUE détectée",
+            "checked": true
+          },
+          {
+            "label": "Image issue d'un registre de confiance",
+            "checked": true
+          },
+          {
+            "label": "Image ne tourne pas en root",
+            "checked": true
+          }
+        ]
+      }
+    ],
+    "mr_templates": [
+      {
+        "url": "https://github.com/trivoallan/regis-cli",
+        "directory": "regis_cli/cookiecutters/mr-evidence"
+      }
+    ],
+    "_meta": {
+      "source_name": "default"
+    }
+  },
+  "tier": "Bronze",
+  "badges": [
+    {
+      "slug": "freshness-stale",
+      "scope": "Freshness",
+      "value": "Stale",
+      "class": "warning",
+      "label": "Freshness: Stale"
+    }
+  ]
+}
