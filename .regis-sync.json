@@ -1,0 +1,11 @@
+{
+  "template": "archive",
+  "context": {
+    "project_name": "RegiS Archive",
+    "project_slug": "regis-archive",
+    "description": "Archive viewer for regis-cli security analysis reports.",
+    "version": "0.20.0",
+    "platform": "github"
+  },
+  "ignore": [".docusaurus/**", "build/**", "static/**"]
+}

@@ -1,0 +1,62 @@
+name: Analyze Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image:
+        description: "Image to analyze (e.g. nginx:latest or ghcr.io/user/repo:tag)"
+        required: true
+      playbook:
+        description: "URL or path to a custom playbook (optional)"
+        required: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Analysis
+        run: |
+          # Use docker to run regis-cli with the workspace mounted.
+          # We use --user root to ensure we can write to the mounted volume,
+          # and map the local static/archive/ directory to the container.
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            --user root \
+            ghcr.io/trivoallan/regis-cli:latest \
+            analyze "${{ github.event.inputs.image }}" \
+            --archive static/archive \
+            --meta "trigger.user= ${{ github.actor }}" \
+            --meta "trigger.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            ${{ github.event.inputs.playbook && format('--playbook {0}', github.event.inputs.playbook) || '' }}
+
+      - name: Fix permissions
+        if: always()
+        run: sudo chown -R $USER:$USER .
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: archive report for ${{ github.event.inputs.image }}"
+          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: "analyze/${{ github.run_id }}"
+          delete-branch: true
+          title: "chore: archive report for ${{ github.event.inputs.image }}"
+          body: |
+            This PR adds a new security analysis report for **${{ github.event.inputs.image }}** to the archive.
+
+            Triggered by: @${{ github.actor }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          add-paths: "**/report.json"
+          base: gh-pages
+          keep-files: true
