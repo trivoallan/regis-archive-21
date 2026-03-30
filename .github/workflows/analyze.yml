@@ -33,7 +33,6 @@ jobs:
             --user root \
             ghcr.io/trivoallan/regis-cli:latest \
             analyze "${{ github.event.inputs.image }}" \
-            --archive archive \
             --meta "trigger.user= ${{ github.actor }}" \
             --meta "trigger.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             ${{ github.event.inputs.playbook && format('--playbook {0}', github.event.inputs.playbook) || '' }}
@@ -58,6 +57,4 @@ jobs:
 
             Triggered by: @${{ github.actor }}
             Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          add-paths: |
-            archive/**
           base: main

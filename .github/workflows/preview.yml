@@ -17,9 +17,9 @@ jobs:
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./archive
+          source-dir: .
           preview-branch: main
-          umbrella-dir: pr-preview
+          umbrella-dir: requests
 
 
   cleanup:
@@ -31,5 +31,5 @@ jobs:
         with:
           source-dir: .
           preview-branch: main
-          umbrella-dir: pr-preview
+          umbrella-dir: requests
           action: remove
