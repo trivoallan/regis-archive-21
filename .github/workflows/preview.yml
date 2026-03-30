@@ -20,30 +20,21 @@ jobs:
         with:
           source-dir: .
           preview-branch: main
-          umbrella-dir: requests
+          umbrella-dir: preview
           qr-code: false
           comment: false
 
-      - name: Fetch action
-        id: pl
-        uses: Rishabh510/Path-lister-action@master
-        with:
-          path: ${{ steps.pr-preview.outputs.preview-url-path }}
-          type: .json
-
-      - name: Output results
-        run: |
-          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.pl.outputs.paths }}; do
-          echo $i
-          done
-
+      - name: Split branch name
+        env:
+          BRANCH: ${{ github.ref_name }}
+        id: split
+        run: echo "fragment=${BRANCH##*/}" >> $GITHUB_OUTPUT
 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ fromJson(steps.pl.outputs.paths)[0] }}
+          body: ${{ steps.pr-preview.outputs.preview-url }}/reports/${{ steps.split.outputs.fragment }}/report.json
 
   cleanup:
     if: github.event.action == 'closed'
@@ -54,5 +45,5 @@ jobs:
         with:
           source-dir: .
           preview-branch: main
-          umbrella-dir: requests
+          umbrella-dir: preview
           action: remove

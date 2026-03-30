@@ -35,6 +35,7 @@ jobs:
             --evaluate \
             --meta "trigger.user= ${{ github.actor }}" \
             --meta "trigger.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --output-dir reports/${{ github.run_id }}
             ${{ github.event.inputs.playbook && format('--playbook {0}', github.event.inputs.playbook) || '' }}
 
       - name: Fix permissions
