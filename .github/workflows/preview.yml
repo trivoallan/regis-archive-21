@@ -24,22 +24,26 @@ jobs:
           qr-code: false
           comment: false
 
-      - name: Find files matching "*.rs" or "*.md"
-        uses: jeertmans/filesfinder@latest
-        id: ff # Any id, to be used later to reference to files output
+      - name: Fetch action
+        id: pl
+        uses: Rishabh510/Path-lister-action@master
         with:
-          # Only argument, a single string, to be passed as arguments to ff.
-          # See `ff --help` for more help.
-          # Default: "*"
-          args: report.json
-      - name: Print files
-        run: echo "${{ steps.ff.outputs.files }}"
+          path: .
+          type: .json
+
+      - name: Output results
+        run: |
+          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
+          for i in ${{ steps.pl.outputs.paths }}; do
+          echo $i
+          done
+
 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ steps.ff.outputs.files[0] }}
+          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ steps.pl.outputs.paths[0] }}
 
   cleanup:
     if: github.event.action == 'closed'
