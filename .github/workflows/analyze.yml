@@ -30,7 +30,7 @@ jobs:
             -v ${{ github.workspace }}:/app \
             -w /app \
             --user root \
-            ghcr.io/trivoallan/regis-cli:latest \
+            ghcr.io/trivoallan/regis-cli:main \
             analyze "${{ github.event.inputs.image }}" \
             --evaluate \
             --meta "trigger.user= ${{ github.actor }}" \
