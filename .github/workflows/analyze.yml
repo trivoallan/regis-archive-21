@@ -25,14 +25,14 @@ jobs:
       - name: Run Analysis
         run: |
           # Use docker to run regis-cli with the workspace mounted.
-          # We use --user root to ensure we can write to the mounted volume,
-          # and map the local static/archive/ directory to the container.
+          # We use --user root to ensure we can write to the mounted volume
           docker run --rm \
             -v ${{ github.workspace }}:/app \
             -w /app \
             --user root \
             ghcr.io/trivoallan/regis-cli:latest \
             analyze "${{ github.event.inputs.image }}" \
+            --evaluate \
             --meta "trigger.user= ${{ github.actor }}" \
             --meta "trigger.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             ${{ github.event.inputs.playbook && format('--playbook {0}', github.event.inputs.playbook) || '' }}

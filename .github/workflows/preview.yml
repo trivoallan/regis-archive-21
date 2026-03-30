@@ -16,11 +16,27 @@ jobs:
 
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
+        id: pr-preview
         with:
           source-dir: .
           preview-branch: main
           umbrella-dir: requests
+          qr-code: false
+          comment: false
 
+      - name: Get report file path
+        id: report-path
+        uses: tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323 # v47.0.5
+        with:
+          # Avoid using single or double quotes for multiline patterns
+          files: |
+            reports/**/report.json
+
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ github.event.pull_request.id }}
+          body: ${{ steps.pr-preview.outputs.preview-url }}/${{ steps.report-path.outputs.added_files[0] }}
 
   cleanup:
     if: github.event.action == 'closed'
