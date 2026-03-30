@@ -1,0 +1,22 @@
+[
+  {
+    "id": "registry-1.docker.io/library/alpine/3.21/2026-03-30T03-53-26",
+    "timestamp": "2026-03-30T03:53:26.839338+00:00",
+    "registry": "registry-1.docker.io",
+    "repository": "library/alpine",
+    "tag": "3.21",
+    "digest": "sha256-c3f8e73fdb79deaebaa2037150150191b9dcbfba68b4a46d70103204c53f4709",
+    "score": 0,
+    "tier": null,
+    "rules_passed": 0,
+    "rules_total": 0,
+    "cve_critical": 0,
+    "cve_high": 0,
+    "cve_medium": 0,
+    "cve_low": 0,
+    "age_days": 61,
+    "sbom_component_count": null,
+    "scorecard_score": null,
+    "path": "registry-1.docker.io/library_alpine/3.21/2026-03-30T03-53-26Z/report.json"
+  }
+]
